@@ -1,0 +1,158 @@
+
+
+/* =============================Team===================================*/
+.team {
+    background: var(--color-bg1);
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+}
+
+.team__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.team__coordinator{
+    width: 320px;
+    margin: 2rem auto;
+}
+.team__member {
+    background: var(--color-bg2);
+    padding: 2rem;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.team__member:hover {
+    background: transparent;
+    border-color: var(--color-primary-alt);
+}
+
+.team__member-image img {
+    filter: saturate(0);
+}
+
+.team__member:hover img {
+    filter: saturate(1);
+}
+
+.team__member-info * {
+    text-align: center;
+    margin-top: 1.4rem;
+}
+
+.team__member-info p {
+    color: var(--color-primary-alt);
+}
+
+.team__member-socials {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-primary-alt);
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.team__member:hover .team__member-socials {
+    right: 0;
+}
+
+.team__member-socials a {
+    padding: 1rem;
+}
+
+.team__member-socials i {
+    color: var(--color-white);
+}
+
+/* =============================More Courses===================================*/
+.courses__more{
+    width: fit-content;
+    background: var(--color-bg2);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: auto;
+    z-index: 999;
+    box-shadow:  0 1rem 2rem rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.courses__more-left img{
+    border-radius: 16px 0 0 16px;
+}
+.courses__more-right h1{
+    text-align: center;
+}
+.courses__more-right ul{
+    text-align: left;
+    padding: 1rem;
+}
+.courses__more-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.courses__more-container h4{
+    text-align: right;
+}
+#jee__popup_container,#cet__popup_container, #neet__popup_container{
+    display: none;
+}
+/* close container courses */
+#close__popup__jee, #close__popup__cet, #close__popup__neet{
+    display: none;
+}
+/* =============================Media Query===================================*/
+/*Tablet 1024*/
+@media screen and (max-width: 1024px) {
+    .team__container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .team__member {
+        padding: 1rem;
+    }
+}
+
+/*Tablet 600px*/
+@media screen and (max-width: 600px) {
+    .team__member {
+        padding: 0;
+    }
+
+    .team__member p {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Phones 420px */
+
+
+@media screen and (max-width: 420px) {
+
+
+    /* Team */
+    .team {
+        padding: 6rem 0.5rem;
+    }
+
+    .team__container {
+        grid-template-columns: 1fr;
+    }
+
+    .team__member img {
+        filter: saturate(1);
+    }
+    /* Course More */
+    #close__popup__jee, #close__popup__cet, #close__popup__neet{
+        display: block;
+    }
+}
